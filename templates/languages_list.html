@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список языков</title>
+</head>
+<body>
+    <h1>Список всех языков</h1>
+    <a href="/">Главная страница</a>
+    <br>
+    <ul>
+        {% for item in list %}
+        <li><a href="countries_that_speak_same_language/{{ item }}"> {{ item }} </a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

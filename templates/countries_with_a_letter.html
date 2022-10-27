@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страна под буквой</title>
+</head>
+<body>
+
+<h1>Страны начинающиеся на букву: {{ countries.0.0 }}</h1>
+
+    <ul>
+        {% for i in countries %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+
+<br> <a href="/countries_list"> к списку стран </a>
+</body>
+</html>

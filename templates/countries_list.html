@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список стран</title>
+    <style>
+    .list_of_countries {
+        border: 2px outset blue;
+        background-color: lightyellow;
+        text-align: center;
+        }
+
+    .pagination {
+        border: 5px outset red;
+        background-color: lightblue;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<br>
+    <ul>
+    {% for item in alphabeth %}
+        <strong><a href="/countries_with_a_letter/{{ item }}">{{ item }} </a></strong>
+    {% endfor %}
+    </ul>
+<br>
+<a href="/">Главная страница</a>
+<br>
+    <ol>
+        {% for item in country_list %}
+        <li> <a href="/country/{{ item.country }}">{{ item.country | title }}</a></li>
+        {% endfor %}
+    </ol>
+
+<div class="list_of_countries">
+    {% for item in page_obj %}
+    {{ item | title }}<br>
+    {% endfor %}
+</div>
+<br>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            &laquo; <a href="?page=1">Первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+
+        <span class="current" style="color: red; font-weight:bold">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}"> Последняя</a> &raquo;
+        {% endif %}
+    </span>
+</div>
+</body>
+</html>

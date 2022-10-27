@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список стран, которые говорят на одном языке</title>
+</head>
+<body>
+    <h1> Язык: {{ languages_to_countries.0 }} </h1>
+
+    <ul>
+    {% for item in languages_to_countries.1 %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+    <br>
+    <a href="/languages_list"> к списку языков </a>
+
+</body>
+</html>
