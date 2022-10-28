@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, Http404
+from django.http import HttpResponse, Http404
 from django.core.paginator import Paginator
 
 def main_page(request):
